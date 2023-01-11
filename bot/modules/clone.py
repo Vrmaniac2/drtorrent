@@ -122,7 +122,7 @@ def _clone(message, bot):
             tag = reply_to.from_user.mention_html(reply_to.from_user.first_name)
 
     if not (is_gdrive_link(link) or (link.strip().isdigit() and multi == 0) or is_gdtot_link(link) or is_udrive_link(link) or is_sharer_link(link) or is_sharedrive_link(link) or is_filepress_link(link)):
-        return sendMessage("Send Gdrive or GDToT/HubDrive/DriveHub(ws)/KatDrive/Kolop/DriveFire/FilePress/SharerPw/ShareDrive link along with command or by replying to the link by command\n\n<b>Multi links only by replying to first link/file:</b>\n<code>/cmd</code> 10(number of links/files)", bot, message)
+        return sendMessage("Send Gdrive or GDToT link along with command or by replying to the link by command\n\n<b>Multi links only by replying to first link/file:</b>\n<code>/cmd</code> 10(number of links/files)", bot, message)
 
     timeout = 60
     listener = [bot, message, c_index, u_index, timeout, time(), tag, link]
@@ -243,7 +243,7 @@ def start_clone(listelem):
                 if config_dict['EMOJI_THEME']:
                     cc = f'\n<b>╰👤 #Clone_By: </b>{tag}\n\n'
                 else:
-                    cc = f'\n<b>╰ #Clone_By: </b>{tag}\n\n'
+                    cc = f'\n<b>#Clone_By: </b>{tag}\n\n'
                 if config_dict['PICS']:
                     sendPhoto(result + cc, bot, message, rchoice(config_dict['PICS']), button)
                 else:
@@ -286,7 +286,7 @@ def start_clone(listelem):
                         if config_dict['EMOJI_THEME']:
                             cc = f'\n<b>╰👤 #Clone_By: </b>{tag}\n\n'
                         else:
-                            cc = f'\n<b>╰ #Clone_By: </b>{tag}\n\n'
+                            cc = f'\n<b>#Clone_By: </b>{tag}\n\n'
                         if config_dict['PICS']:
                             sendPhoto(result + cc, bot, message, rchoice(config_dict['PICS']), button)
                         else:
@@ -308,9 +308,9 @@ def start_clone(listelem):
         slmsg += f"├📐 Size: {get_readable_file_size(size)}\n"
         slmsg += f"╰👥 Added by: {tag} | <code>{user_id}</code>\n\n"
     else:
-        slmsg = f"╭ Name: <{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n"
-        slmsg += f"├ Size: {get_readable_file_size(size)}\n"
-        slmsg += f"╰ Added by: {tag} | <code>{user_id}</code>\n\n"
+        slmsg = f"Name: <{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n"
+        slmsg += f"Size: {get_readable_file_size(size)}\n"
+        slmsg += f"Added by: {tag} | <code>{user_id}</code>\n\n"
     if 'link_logs' in user_data:
         try:
             upper = f"‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒\n"
@@ -335,7 +335,7 @@ def start_clone(listelem):
     if config_dict['EMOJI_THEME']:
         cc = f'\n<b>╰👤 #Clone_By: </b>{tag}\n\n'
     else:
-        cc = f'\n<b>╰ #Clone_By: </b>{tag}\n\n'
+        cc = f'\n<b>#Clone_By: </b>{tag}\n\n'
     if button.build_menu(2) in ["cancelled", ""]:
         sendMessage(f"{tag} {result}", bot, message)
     else:
@@ -351,7 +351,7 @@ def start_clone(listelem):
         if config_dict['EMOJI_THEME']:
             logwarn = f"<b>⚠️ I have sent files in Mirror Log Channel. Join <a href=\"{config_dict['MIRROR_LOG_URL']}\">Mirror Log channel</a> </b>\n"
         else:
-            logwarn = f"<b>I have sent files in Mirror Log Channel. Join <a href=\"{config_dict['MIRROR_LOG_URL']}\">Mirror Log channel</a> </b>\n"
+            logwarn = f"<b>Thank you for using <a href='https://telegram.dog/DrTorrentXU'>Dr. Torrent X </a> </b>\n"
     else:
         logwarn = ''
 
